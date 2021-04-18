@@ -1,12 +1,13 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
+  font-size: 1.2rem;
   color: coral;
   line-height: 1.6;
 }
@@ -25,7 +26,7 @@ body{
 }
 
 #showcase h1{
-  font-size: 50px;
+  font-size: 8rem;
   position: relative;
   line-height: 1.2;
   color: #f4f4f4;
@@ -41,15 +42,15 @@ body{
 }
 
 #showcase p{
-  font-size: 22px;
-  margin-top: 220px;
+  font-size: 1.2rem;
+  margin-top: 20%;
   padding: 20px;
   text-shadow: 1px 1px 2px pink;
   color: #271879;
   position: relative;
   animation-name: content;
   animation-fill-mode: forwards;
-  animation-duration: 3s;
+  animation-duration: 4s;
 }
 
 @keyframes content{
@@ -58,48 +59,40 @@ body{
 }
 
 #main{
-  background-color: #f7e4c8;  
+  background-color: #f7e4c8;
+  display: flex;
 }
 
 #section-a, #section-b, #section-c{
-  display: inline-block;
+  flex-direction: row;
   text-align: center;
   padding: 20px 0 20px 0;
 }
 
 
-#section-a h2:hover, #section-b h2:hover, #section-c h2:hover{
+#section-a h2:hover, #section-c h2:hover{
   transform: scale(1.2);
-  color: white;
   animation: link 3s 2s forwards;
   opacity: 0.8;
   transition-property: transform;
   transition-duration: 1s;
-  transform: rotateY(180deg);
+  transform: rotateY(360deg);
 }
 
-/* @keyframes link{
-  0%   {opacity: 0;}
-  100% {opacity: 1;}
-} */
-
 #main h2{
-  border: 1px solid;
-  color: white;
-  text-align: center;
-  padding: 0 0 12;
-  margin: auto; 
-  padding: 2px 6px 0px 6px;
-  border-radius: 50;
-  border-radius: 8px;
-  box-shadow: 3px 3px 13px 0px #cccccc;
-  width: 180px;
-  font-weight: 500;
+    text-align: center;
+    padding: 2px 6px 0px 6px;
+    border-radius: 50;
+    border-radius: 8px;
+    box-shadow: 3px 3px 13px 0px #cccccc;
+    width: 100%;
+    font-weight: 500;
 }
 
 #main p{
   padding: 10px;
 }
+
 a{
   text-decoration: none;
   color: coral;
@@ -108,4 +101,76 @@ a{
 footer{
   text-align: center;
   background-color: #f7e4c8;
+}
+
+
+/*****************************************/
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0,0.5);
+}
+
+.modal-content{
+    background-color: #f4f4f4;
+    margin: 10% auto;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header h2, .modal-footer h3{
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal-header{
+    background: coral;
+    padding: 15px;
+    color: #fff;
+}
+
+.modal-body{
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.modal-footer{
+    background: coral;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.closeBtn{
+    color: #cccccc;
+    float: right;
+    font-size: 30px;
+    color: #fff;
+}
+
+.closeBtn:hover,.closeBtn:focus{
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes modalopen{
+    from{ opacity: 0;}
+    to{ opacity: 1;}
 }
