@@ -42,8 +42,8 @@ body{
 }
 
 #showcase p{
-  font-size: 22px;
-  margin-top: 220px;
+  font-size: 1.2rem;
+  margin-top: 20%;
   padding: 20px;
   text-shadow: 1px 1px 2px pink;
   color: #271879;
@@ -70,7 +70,7 @@ body{
 }
 
 
-#section-a h2:hover, #section-b h2:hover, #section-c h2:hover{
+#section-a h2:hover, #section-c h2:hover{
   transform: scale(1.2);
   animation: link 3s 2s forwards;
   opacity: 0.8;
